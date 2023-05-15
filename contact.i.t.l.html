@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> I.T.L </title>
+    <link rel="shortcut icon" type="x-icon" href="IMAGES/logo.pic.png" align="center" ;>
+	<link rel="stylesheet" type="text/css" href="style.i.t.l.css">
+	
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+
+  function checkForm()
+ {
+	 var wrong=false;
+	 var illegalchars=/[^a-zA-Zא-ת]/;
+     var illegalnum=/[^0-9\-]/;
+	 var mailfilter= /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+
+	 /****************************/
+	 /*     CHECK FIRST NAME     */
+     /****************************/
+     var fname=document.forms["contact_form"]["f_name"].value;
+	 if (fname=="")
+      {
+	   show_wrong("First name must be filled","f_name");wrong=true;
+      }
+	 
+	 else if (fname.length<2 && fname!="")
+      {
+	   show_wrong("First name is to short","f_name");wrong=true;
+      }
+	 
+     else if (illegalchars.test(fname))
+      {
+       show_wrong("First name is wrong","f_name");wrong=true;
+      }
+
+     else show_correct("f_name");
+
+
+
+     /****************************/
+	 /*     CHECK LAST NAME      */
+     /****************************/
+     var lname=document.forms["contact_form"]["l_name"].value;
+	 if (lname=="")
+      {
+	   show_wrong("last name must be filled","l_name");wrong=true;
+      }
+
+	 else if (lname.length<2)
+      {
+	   show_wrong("last name is to short","l_name");wrong=true;
+      }
+	 
+     else if (illegalchars.test(lname))
+      {
+       show_wrong("last name is wrong","l_name");wrong=true;
+      }
+
+     else show_correct("l_name");
+
+
+
+     /****************************/
+	 /*    CHECK PHONE NUMBER    */
+     /****************************/
+	 var phone=document.forms["contact_form"]["phone"].value;
+	 if (phone=="")
+      {
+	   show_wrong("must be filled","phone");wrong=true;
+      }
+
+     else if (illegalnum.test(phone))
+      {
+	   show_wrong("illegal digits","phone");wrong=true;
+      }
+
+     else if ((phone.length<9 || phone.length>11))
+      {
+	   show_wrong("wrong number of digits","phone");wrong=true;
+      }
+
+     else show_correct("phone");
+
+
+     /****************************/
+	 /*    CHECK EMAIL ADDRESS   */
+     /****************************/
+    var mail=document.forms["contact_form"]["email"].value;
+
+    if (mail=="")
+    {
+	 show_wrong("must be filled","email");wrong=true;
+    }
+
+
+    else if (!mailfilter.test(mail) && mail!="")
+    {
+	 show_wrong("wrong e-mail address","email");wrong=true;
+    }
+
+    else show_correct("email");
+
+
+
+     /*********************************/
+	 /*    CHECK IF ANY WRONG FIELD   */
+     /*********************************/
+	 
+	 if (!wrong)
+	  {
+	   return true;
+	  }
+	 else
+	  {
+	   return false
+	  }
+
+ 
+ }
+
+
+  function show_send()
+ {
+	 var agree=document.forms["contact_form"]["agree_check"].checked;
+	 if (agree)
+      {
+       document.getElementById("send_btn").style.display="block";
+       document.getElementById("send_pic").style.display="none";
+      }
+	 else
+      {
+       document.getElementById("send_btn").style.display="none";
+       document.getElementById("send_pic").style.display="block";
+      }
+
+ }
+
+
+function show_wrong(comment,field)
+{
+ document.forms["contact_form"][field].style.border="2px solid #ff0000";
+ document.forms["contact_form"][field].style.backgroundColor="#ffffff";
+ document.forms["contact_form"][field].style.color="#ff0000";
+ document.forms["contact_form"][field].value=comment;
+}
+
+function show_correct(field)
+{
+ document.forms["contact_form"][field].style.border="none";
+ document.forms["contact_form"][field].style.backgroundColor="#e0e0e0";
+ document.forms["contact_form"][field].style.color="#000000";
+}
+
+function change_color()
+{
+ document.forms["contact_form"]["f_name"].value="";
+ document.forms["contact_form"]["f_name"].style.color="#000000";
+}
+
+function focusig(element)
+{
+ //document.forms["contact_form"][element].style.color='black';
+ document.forms["contact_form"][element].style.backgroundColor='#FFFFCC';
+ document.forms["contact_form"][element].style.border='none';
+ document.forms["contact_form"][element].value='';
+
+}
+
+  </script>
+
+
+
+
+</style>
+
+ </head>
+
+ <body>
+    <div id="header">
+		<h1><a href="Home.i.t.l.html"> <img src="images/123.png"> <span>It's The Leaf Sense </span></a></h1>
+		<ul id="navigation">
+			<li class="current">
+				<a href="Home.i.t.l.html">Home</a>
+			</li>
+			<li>
+				<a href="About.i.t.l.html">About</a>
+			</li>
+			<li>
+				<a href="choose.i.t.l.html">Choose Your Sense</a>
+				
+			</li>
+			<li>
+				<a href="contact.i.t.l.html">Contact</a>
+			</li>
+			
+		</ul>
+	</div>
+<form method="post" action="Thanks.i.t.l.html" name="contact_form" onsubmit="return checkForm()" >
+<h2>Feel Free To Contact us </h2> 
+
+<h3>First name:</h3>
+<input type="text" name="f_name" maxlength="15" class="text_input" onfocus="focusig('f_name')" onblur="this.style.backgroundColor='#e0e0e0';"/>
+
+<h3>Last name:</h3>
+<input type="text" name="l_name" maxlength="15" class="text_input" onclick="this.style.color='black';this.value=''"/>
+
+<h3>Phone Number:</h3>
+<input type="text" name="phone" maxlength="15" class="text_input" onclick="this.style.color='black';this.value=''"/>
+
+<h3>E-mail:</h3>
+<input type="text" name="email" maxlength="25" class="text_input" onclick="this.style.color='black';this.value=''"/>
+
+<h3>Message:</h3>
+<textarea></textarea>
+
+<h3>Agree<input type="checkbox" name="agree_check" onclick="show_send()"/></h3>
+
+
+<div style="clear:both;"></div>
+<input type="submit" name="submit" value="send" class="send_btn" id="send_btn"/>
+<div class="send_pic" id="send_pic">send</div>
+<div style="clear:both;"></div>
+</form>
+ 
+	
+	
+	
+	
+	
+		
+<div id="footer">
+	<div>
+		<span>I.T.L St. Earth, Heven | 0547644050</span>
+		<p>
+			&copy; 2023 by Natalie &amp; Help Of God. All rights reserved.
+		</p>
+		</div>
+	
+	<div id="connect">
+		<a href="https://instagram.com/nat04lie?igshid=YmMyMTA2M2Y=" id="insta" target="_blank">
+			<img src="images/wapp.png" style="width: 7%; height: 7%;"/>
+		</a>
+		<a href="https://wa.me/972547644050" id="whatsapp" target="_blank">
+			<img src="images/insta.png" style="width: 7%; height: 7%;"/>
+		</a>
+		
+		</div>
+	
+	</div>
+</div>
+
+	
+</div>
+</div>
+
+
+
+
+
+
+</script>
+</body>
+</html>

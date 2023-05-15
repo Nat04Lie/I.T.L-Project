@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> I.T.L </title>
+    <link rel="shortcut icon" type="x-icon" href="IMAGES/logo.pic.png" align="center" ;>
+	<link rel="stylesheet" type="text/css" href="style.i.t.l.css">
+
+    <style>
+        .button {
+          padding: 15px 25px;
+          font-size: 24px;
+          text-align: center;
+          cursor: pointer;
+          outline: none;
+          color: #fff;
+          background-color: #04AA6D;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 9px #999;
+        }
+        
+        .button:hover {background-color: #3e8e41}
+        
+        .button:active {
+          background-color: #3e8e41;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+        </style>
+        <script>
+            function myFunction() {
+              document.getElementById("forms").submit();
+            }
+            </script>
+
+		
+            
+	
+
+</head>
+<body> 
+	
+	
+	
+	<div id="header">
+		<h1><a href="Home.i.t.l.html"> <img src="images/123.png"> <span>It's The Leaf Sense </span></a></h1>
+		<ul id="navigation">
+			<li class="current">
+				<a href="Home.i.t.l.html">Home</a>
+			</li>
+			<li>
+				<a href="About.i.t.l.html">About</a>
+			</li>
+			<li>
+				<a href="choose.i.t.l.html">Choose Your Sense</a>
+				
+			</li>
+			<li>
+				<a href="contact.i.t.l.html">Contact</a>
+			</li>
+			
+		</ul>
+	</div>
+    
+    <div id="forms"> 
+	
+    <form id="checkbox">
+        
+        <img src="images/e.b.png">
+                        <p> This all-natural perfume is made with night blooming jasmine leaf,
+                             a rare and exotic flower with a sweet and fragrant aroma. 
+                            The scent is both delicate and mysterious, 
+                            with a hint of spice and earthy tones. 
+                            Its light, floral notes are perfectly balanced with a warm, woody base. 
+                            The scent is perfect for romantic evenings, 
+                            as the scent of jasmine is known to inspire passion and romance. 
+                            Its long-lasting aroma will linger on your skin, 
+                            creating an unforgettable scent as you move through the night.
+						</p>
+           
+        
+        <br>
+		
+
+		<label for="myCheck">I.T.L-100ml-Jasmin:</label> 
+		<input type="checkbox" id="myCheck" onclick="myFunction()">
+
+		<p id="text" style="display:none">Now For only 459$ for more details contact us!</p>
+
+		<script>
+			function myFunction() {
+  			var checkBox = document.getElementById("myCheck");
+  			var text = document.getElementById("text");
+  			if (checkBox.checked == true){
+   			   text.style.display = "block";
+		  } else {
+     		text.style.display = "none";
+ 			 }
+		}
+		</script>
+
+      </form>
+
+      <form id="checkbox">
+        <img src="images/p.b.png">
+		<p>This all-natural perfume is a captivating blend of sweet and spicy notes.
+			At the top, the scent opens with a bright burst of citrusy bergamot and sweet, 
+			floral ylang ylang leaf. A hint of clove and nutmeg add a spicy warmth, while a soft, 
+			woody base of sandalwood and cedarwood provide a soothing, earthy finish. Rich and complex, 
+			this scent is sure to be a favorite.
+
+		</p>
+        
+        <br>
+        <input type="checkbox" id="30ml" name="30ml" value="ylang-30">
+        <label for="p_type1"> 30ml-259$<br></label><br>
+        <input type="checkbox" id="50ml" name="50ml" value="ylang-50">
+        <label for="p_type2"> 50ml-459$<br></label><br>
+        <input type="checkbox" id="100ml" name="100ml" value="ylang-100">
+        <label for="p_type3"> 100ml-559$</label><br><br>
+       
+      </form>
+
+      <form id="checkbox">
+        <img src="images/c.t.png">
+		<p>Aloe vera, shea butter, calendula and nutrient-rich beta-glucan work together to restore skin's natural lipid balance. 
+			Replenishing hydration immediately rebalances, soothes and softens extremely rough, dry or sensitive skin</p>
+        <br>
+        
+        <br>
+        <input type="checkbox" id="30ml" name="30ml" value="ylang-30">
+        <label for="p_type1"> 30ml-59$<br></label><br>
+        <input type="checkbox" id="50ml" name="50ml" value="ylang-50">
+        <label for="p_type2"> 50ml-99$<br></label><br>
+        <input type="checkbox" id="100ml" name="100ml" value="ylang-100">
+        <label for="p_type3"> 100ml-109$</label><br><br>
+       
+      </form>
+
+    <form id="radio" action="contact.i.t.l.html">
+        <p>Please select:</p>
+        <img src="images/gbox.png">
+		<br>
+	
+
+  <input type="radio" value="Whit Gift Box-" name="Box Gift">
+  <label class="gbox"> Whit Gift Box</label><br>
+  <input type="radio" value="Whitout Box Gift" name="Box Gift">
+  <label class="gbox"> Whitout Gift Box</label><br><br> 
+  <button class="button">Select</button>
+</form>
+</div> 
+</body>
+   
+<div id="footer">
+	<div>
+		<span>I.T.L St. Earth, Heven | 0547644050</span>
+		<p>
+			&copy; 2023 by Natalie &amp; Help Of God. All rights reserved.
+		</p>
+		</div>
+	
+	<div id="connect">
+		<a href="https://instagram.com/nat04lie?igshid=YmMyMTA2M2Y=" id="insta" target="_blank">
+			<img src="images/wapp.png" style="width: 7%; height: 7%;"/>
+		</a>
+		<a href="https://wa.me/972547644050" id="whatsapp" target="_blank">
+			<img src="images/insta.png" style="width: 7%; height: 7%;"/>
+		</a>
+		
+		</div>
+	
+	</div>
+</div>
+
+	
+</div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
